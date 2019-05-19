@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, shrink-to-fit=no">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Оценка компонентного состава тела</title>
+
+        <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="img/favicons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="img/favicons/favicon-16x16.png">
+        <!--<link rel="manifest" href="img/favicons/site.webmanifest">
+        <link rel="mask-icon" href="img/favicons/safari-pinned-tab.svg" color="#da532c">
+        <meta name="msapplication-TileColor" content="#da532c">-->
+        <meta name="theme-color" content="#e9ecef">
+
+        <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body>
+        <nav class="site-header navbar-expand-lg navbar-dark fixed-top">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-center" id="navbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#body-mass-index" data-target="anchor">Индекс массы тела</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#fat-percentage" data-target="anchor">Жировая масса</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#percentage-of-muscle-mass" data-target="anchor">Мышечная масса</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#bone-mass-percentage" data-target="anchor">Костная масса</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container-fluid">
+                <div class="row">
+                    <main class="col-12">
+                        <h1 class="text-center" id="content">Оценка компонентного состава тела</h1>
+                        <section class="col" id="body-mass-index">
+                            <div class="jumbotron">
+                                <div class="col-sm-10 mx-auto">
+                                    <h2>Индекс массы тела</h2>
+                                    <p class="text-justify"><span>Индекс массы тела (ИМТ) является показателем отношения веса и роста человека. Данный параметр помогает определить отклонения от нормальной массы тела в ту или иную сторону. Лишний вес опасен для человеческого здоровья, поскольку часто приводят к сердечным заболеваниям.</span> <span>Нужно понимать, что ИМТ не годится для постановления диагноза, но он может помочь в качестве контроля в процессе опробования новой фитнес-программы или диеты.</span> <span>Чтобы рассчитать индекс массы тела необходимо выбрать в представленном сервисе свой рост и вес.</span></p>
+                                    <h3 class="text-center" id="bmi"></h3>
+                                    <form name="form">
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <label for="growth-1">Рост</label>
+                                                <input type="number" step="0.01" class="form-control" id="growth-1" placeholder="В сантиметрах" min="1" required="">
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <label for="weight-1">Вес</label>
+                                                <input type="number" step="0.01" class="form-control" id="weight-1" placeholder="В килограммах" min="1" required="">
+                                            </div>
+                                        </div>
+                                        <hr class="mb-4">
+                                        <button class="btn btn-lg" OnClick="bmi();">Вычислить</button>
+                                    </form>
+                                    <p class="text-center">
+                                        <a class="a-link" data-toggle="collapse" href="#collapse-1" role="button" aria-expanded="false">
+                                            Подробнее о ИМТ
+                                        </a>
+                                    </p>
+                                    <div class="collapse" id="collapse-1">
+                                        <div class="card">
+                                            <table class="table">
+                                                <thead>
+                                                <tr>
+                                                    <th scope="col">Индекс массы тела</th>
+                                                    <th scope="col">Выраженный дефицит</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr>
+                                                    <td>16—18,5</td>
+                                                    <td>Недостаточная (дефицит) масса тела</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>18,5—25</td>
+                                                    <td>Норма</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>25—30</td>
+                                                    <td>Избыточная масса тела (предожирение)</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>30—35</td>
+                                                    <td>Ожирение первой степени</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>35—40</td>
+                                                    <td>Ожирение второй степени</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>40 и более</td>
+                                                    <td>Ожирение третьей степени (морбидное)</td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="col" id="fat-percentage">
+                            <div class="jumbotron">
+                                <div class="col-sm-10 mx-auto">
+                                    <h2>Абсолютное количество жировой массы</h2>
+                                    <p class="text-justify"><span>Жировая масса — разновидность соединительной ткани животных организмов, образующаяся из мезенхимы и состоящая из жировых клеток. Жир необходим для выживания: он защищает внутренние органы, служит резервным источником энергии и выполняет много других важных функций.</span> <span>Если процент жира в вашем организме приближается к максимально допустимому значению нормального телосложения или попадает под ожирение, вам не помешало бы уменьшить этот показатель.</span></p>
+                                    <h3 class="text-center" id="fp"></h3>
+                                    <form name="form">
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <label for="growth-2">Рост</label>
+                                                <input type="number" step="0.01" class="form-control" id="growth-2" placeholder="В сантиметрах" min="1" required="">
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <label for="weight-2">Вес</label>
+                                                <input type="number" step="0.01" class="form-control" id="weight-2" placeholder="В килограммах" min="1" required="">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <label for="front-shoulder-1">Жировая складка плеча спереди</label>
+                                                <input type="number" step="0.01" class="form-control" id="front-shoulder-1" placeholder="В миллиметрах" min="1" required="">
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <label for="back-shoulder-1">Жировая складка плеча сзади</label>
+                                                <input type="number" step="0.01" class="form-control" id="back-shoulder-1" placeholder="В миллиметрах" min="1">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <label for="forearm-1">Жировая складка предплечья</label>
+                                                <input type="number" step="0.01" class="form-control" id="forearm-1" placeholder="В миллиметрах" min="1" required="">
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <label for="back">Жировая складка спины</label>
+                                                <input type="number" step="0.01" class="form-control" id="back" placeholder="В миллиметрах" min="1">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <label for="chest">Жировая складка груди</label>
+                                                <input type="number" step="0.01" class="form-control" id="chest" placeholder="В миллиметрах" min="1" required="">
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <label for="stomach">Жировая складка живота</label>
+                                                <input type="number" step="0.01" class="form-control" id="stomach" placeholder="В миллиметрах" min="1">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <label for="hip-1">Жировая складка бедра</label>
+                                                <input type="number" step="0.01" class="form-control" id="hip-1" placeholder="В миллиметрах" min="1" required="">
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <label for="shin-1">Жировая складка голени</label>
+                                                <input type="number" step="0.01" class="form-control" id="shin-1" placeholder="В миллиметрах" min="1">
+                                            </div>
+                                        </div>
+                                        <hr class="mb-4">
+                                        <button class="btn btn-lg" OnClick="fp();">Вычислить</button>
+                                    </form>
+                                    <p class="text-center">
+                                        <a class="a-link" data-toggle="collapse" href="#collapse-2" role="button" aria-expanded="false">
+                                            Подробнее о жировой массе
+                                        </a>
+                                    </p>
+                                    <div class="collapse" id="collapse-2">
+                                        <div class="card">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">Женщины</th>
+                                                        <th scope="col">Мужчины</th>
+                                                        <th scope="col">Нормы</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>10–12%</td>
+                                                        <td>2–4%</td>
+                                                        <td>Необходимый жир</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>14–18%</td>
+                                                        <td>6–13%</td>
+                                                        <td>Атлетическое телосложение</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>21–24%</td>
+                                                        <td>14–17%</td>
+                                                        <td>Спортивное телосложение</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>25–31%</td>
+                                                        <td>18–25%</td>
+                                                        <td>Обычное телосложение</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>32% и более</td>
+                                                        <td>36% и более</td>
+                                                        <td>Ожирение</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="col" id="percentage-of-muscle-mass">
+                            <div class="jumbotron">
+                                <div class="col-sm-10 mx-auto">
+                                    <h2>Абсолютное количество мышечной массы</h2>
+                                    <p class="text-justify"><span>В теле человека специалисты выделяют два вида массы: жировую и безжировую. Первый вид включает в себя все жировые ткани вместе с висцеральной прослойкой, а второй — кости, внутренние органы и мышцы.</span> <span>Достаточное количество мышечной массы (мышц) свидетельствует о хорошем уровне здоровья и физической подготовки человека. Когда процент мышечной массы в норму не вписывается, а преобладать начинает жировая масса, то человеческий организм испытывает сильные дополнительные нагрузки.</span> <span>Для построения правильного рациона питания необходимо знать не только эффективные упражнения, но и норму мышечной массы. Это знание позволит адекватно оценивать состояние собственного организма и отслеживать прогресс или деградацию в тренировках. Для мужчин и женщин эта норма разная. Также она зависит от возраста, расы и роста человека.</span></p>
+                                    <h3 class="text-center" id="pmm"></h3>
+                                    <form name="form">
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <label for="growth-3">Рост</label>
+                                                <input type="number" step="0.01" class="form-control" id="growth-3" placeholder="В сантиметрах" min="1" required="">
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <label for="forearm-volume">Обхват предплечья</label>
+                                                <input type="number" step="0.01" class="form-control" id="forearm-volume" placeholder="В сантиметрах" min="1" required="">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-4 mb-3">
+                                                <label for="shoulder-volume">Обхват плеча</label>
+                                                <input type="number" step="0.01" class="form-control" id="shoulder-volume" placeholder="В сантиметрах" min="1" required="">
+                                            </div>
+                                            <div class="col-md-4 mb-3">
+                                                <label for="hip-volume">Обхват бедра</label>
+                                                <input type="number" step="0.01" class="form-control" id="hip-volume" placeholder="В сантиметрах" min="1" required="">
+                                            </div>
+                                            <div class="col-md-4 mb-3">
+                                                <label for="shin-volume">Обхват голени</label>
+                                                <input type="number" step="0.01" class="form-control" id="shin-volume" placeholder="В сантиметрах" min="1">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-4 mb-3">
+                                                <label for="front-shoulder-2">Жировые складки плеча спереди</label>
+                                                <input type="number" step="0.01" class="form-control" id="front-shoulder-2" placeholder="В миллиметрах" min="1" required="">
+                                            </div>
+                                            <div class="col-md-4 mb-3">
+                                                <label for="back-shoulder-2">Жировые складки плеча сзади</label>
+                                                <input type="number" step="0.01" class="form-control" id="back-shoulder-2" placeholder="В миллиметрах" min="1">
+                                            </div>
+                                            <div class="col-md-4 mb-3">
+                                                <label for="forearm-2">Жировая складка предплечья</label>
+                                                <input type="number" step="0.01" class="form-control" id="forearm-2" placeholder="В миллиметрах" min="1" required="">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <label for="hip-2">Жировая складка бедра</label>
+                                                <input type="number" step="0.01" class="form-control" id="hip-2" placeholder="В миллиметрах" min="1" required="">
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <label for="shin-2">Жировая складка голени</label>
+                                                <input type="number" step="0.01" class="form-control" id="shin-2" placeholder="В миллиметрах" min="1">
+                                            </div>
+                                        </div>
+                                        <hr class="mb-4">
+                                        <button class="btn btn-lg" OnClick="pmm();">Вычислить</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="col" id="bone-mass-percentage">
+                            <div class="jumbotron">
+                                <div class="col-sm-10 mx-auto">
+                                    <h2>Абсолютное количество костной массы</h2>
+                                    <p class="text-justify"><span>Костная масса представляет собой совокупность в организме человека органических веществ, таких как кальций, магний или цинк. Она должна учитываться, если вы занимаетесь спортом или желаете уменьшить количество жира. Оптимальное ее количество способствует быстрому росту мышц и укреплению скелета.</span> <span>Костная масса дает понятие о весе костей в организме. На протяжении всей жизни она может меняться, если человек прибавляет в весе - это нормальный физиологический процесс. Если костная масса уменьшается, но вес стоит на месте, то это сигнализирует о проблеме.</span> <span>Людям, столкнувшимся с подобной ситуацией, очень важно не медлить и обратиться к специалисту за помощью. Нормальное состояние костей - залог правильной работы опорно-двигательного аппарата, и с этим шутить не стоит. Оценочная костная масса не позволяет говорить о прочности костей, этот показатель можно определить только путем лабораторных исследований.</span></p>
+                                    <h3 class="text-center" id="bmp"></h3>
+                                    <form name="form">
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <label for="growth-4">Рост</label>
+                                                <input type="number" step="0.01" class="form-control" id="growth-4" placeholder="В сантиметрах" min="1" required="">
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <label for="cubit">Ширина локтя</label>
+                                                <input type="number" step="0.01" class="form-control" id="cubit" placeholder="В сантиметрах" min="1" required="">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-4 mb-3">
+                                                <label for="wrist">Ширины запястья</label>
+                                                <input type="number" step="0.01" class="form-control" id="wrist" placeholder="В сантиметрах" min="1" required="">
+                                            </div>
+                                            <div class="col-md-4 mb-3">
+                                                <label for="knee">Ширина колена</label>
+                                                <input type="number" step="0.01" class="form-control" id="knee" placeholder="В сантиметрах" min="1" required="">
+                                            </div>
+                                            <div class="col-md-4 mb-3">
+                                                <label for="ankle">Ширина лодыжки</label>
+                                                <input type="number" step="0.01" class="form-control" id="ankle" placeholder="В сантиметрах" min="1" required="">
+                                            </div>
+                                        </div>
+                                        <hr class="mb-4">
+                                        <button class="btn btn-lg" OnClick="bmp();">Вычислить</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </section>
+                    </main>
+                </div>
+        </div>
+
+        <script src="js/jquery-3.2.1.slim.min.js"></script>
+        <script src="js/jquery-1.11.0.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
